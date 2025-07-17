@@ -1,0 +1,11 @@
+red_standard_robot1:
+  robot_recognizer:
+    ros__parameters:
+      robot_min_size: 0.3
+      robot_max_size: 0.8
+      intensity_threshold: 0
+      cloud_topic: /cloud_registered
+      odometry_topic: /odometry
+      pub_marker_topic: /robot_makers
+      pub_pose2d_topic: /relative_pose2d
+      pub_target_topic: /target_pose2d

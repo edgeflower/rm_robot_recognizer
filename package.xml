@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rm_robot_recognizer</name>
+  <version>0.0.0</version>
+  <description>利用3D激光雷达进行机器人识别,以获取其坐标点,便于追击</description>
+  <maintainer email="2398772523@qq.com">lu</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>                              <!-- PointCloud2 消息 -->
+  <depend>geometry_msgs</depend>                            <!-- Pose2D 消息 -->
+  <depend>visualization_msgs</depend>                       <!-- MarkerArray 可视化 -->
+  <depend>pcl_conversions</depend>                          <!-- PCL<->ROS 点云转换 :contentReference[oaicite:7]{index=7} -->
+  <depend>pcl_ros</depend>                                  <!-- PCL-ROS 接口 :contentReference[oaicite:8]{index=8} -->
+  <depend>nav2_msgs</depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <exec_depend>launch</exec_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
