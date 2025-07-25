@@ -2,10 +2,14 @@ red_standard_robot1:
   robot_recognizer:
     ros__parameters:
       robot_min_size: 0.3
-      robot_max_size: 0.8
+      robot_max_size: 0.75
+      voxel_leaf: 0.02
       intensity_threshold: 0
-      cloud_topic: /cloud_registered
-      odometry_topic: /odometry
-      pub_marker_topic: /robot_makers
-      pub_pose2d_topic: /relative_pose2d
-      pub_target_topic: /target_pose2d
+      cluster_tol: 0.2
+      min_cluster_points: 20
+      max_cluster_points: 10000
+      cloud_topic: terrain_map
+      odometry_topic: odometry
+      pub_marker_topic: robot_makers
+      pub_pose2d_topic: relative_pose2d
+      pub_target_topic: target_pose2d

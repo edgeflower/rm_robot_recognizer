@@ -8,6 +8,7 @@
 #include <pcl/common/common.h>
 #include <pcl/filters/passthrough.h>
 #include <pcl/filters/voxel_grid.h>
+#include <pcl/impl/point_types.hpp>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/segmentation/extract_clusters.h>
@@ -31,10 +32,17 @@ private:
 
     double robot_min_size_;
     double robot_max_size_;
-    int intensity_threshold_;
+    int min_cluster_points_; // 最小簇点数
+    int max_cluster_points_;// 最大簇点数
+    double cluster_tol_;  // 聚类容差（米）
+    double window_time_; // 时间窗口（秒）
+    int window_frame_;  // 帧数窗口
+    float voxel_leaf_; // 体素大小 （米）
+    int intensity_threshold_; // 反射强度
+
     std::string cloud_topic;
     std::string odometry_topic;
-    std::string pub_marker_topic;
+    //std::string pub_marker_topic;
     std::string pub_pose2d_topic;
     std::string pub_target_topic;
 
@@ -50,7 +58,7 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr cloud_sub_;
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odometry_sub_;
 
-    rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr pub_marker_;
+    //rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr pub_marker_;
     rclcpp::Publisher<geometry_msgs::msg::Pose2D>::SharedPtr pub_pose2d_;
     rclcpp::Publisher<geometry_msgs::msg::Pose2D>::SharedPtr pub_target_;
 };

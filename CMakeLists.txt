@@ -15,7 +15,6 @@ find_package(visualization_msgs REQUIRED)                    # 可视化 MarkerA
 find_package(pcl_conversions REQUIRED)                       # PCL 与 ROS 点云互转 :contentReference[oaicite:2]{index=2}
 find_package(pcl_ros          REQUIRED)                      # PCL-ROS 接口 :contentReference[oaicite:3]{index=3}
 find_package(nav_msgs REQUIRED)
-
 add_executable(robot_recognizer
               src/robot_recognizer.cpp)   
 
